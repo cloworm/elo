@@ -10,6 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         User.hasMany(models.membership);
+        User.belongsToMany(models.league, { through: 'memberships' });
       }
     },
     instanceMethods: {

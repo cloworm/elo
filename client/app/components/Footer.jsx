@@ -33,15 +33,15 @@ var Footer = React.createClass({
               <li><Link key="home" to="/" >Home</Link></li>
               <li><Link key="docs" to="docs" >Documentation</Link></li>
               {
-                this.props.user ?  (
+                this.props.user ? (
                   [
-                    <li><Link to="users" key="users" >Users</Link></li>,
-                    <li><Link to="/" key="logout" onTouchTap={this._handleLogout} >Logout</Link></li>
+                    <li key="users"><Link to="users">Users</Link></li>,
+                    <li key="logout"><Link to="/" onTouchTap={this._handleLogout} >Logout</Link></li>
                   ]
                 ) : (
                   [
-                    <li><Link to="login" key="login" >Login</Link></li>,
-                    <li><Link to="signup" key="signup" >Sign Up</Link></li>
+                    <li key="login"><Link to="login">Login</Link></li>,
+                    <li key="signup"><Link to="signup">Sign Up</Link></li>
                   ]
                 )
               }

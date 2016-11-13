@@ -36,6 +36,8 @@ function appStore(state, action) {
       return { ...state, isLoading: action.isLoading }
     case 'LOAD_USERS':
       return { ...state, users: action.users }
+    case 'LOAD_LEAGUES':
+      return { ...state, leagues: action.leagues }
     case 'HIDE_SNACKBAR':
       return { ...state, snacks: state.snacks.slice(1, state.snacks.length) }
     default:
