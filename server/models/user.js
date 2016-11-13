@@ -7,6 +7,11 @@ module.exports = function(sequelize, DataTypes) {
     email: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
+    classMethods: {
+      associate: function(models) {
+        User.hasMany(models.membership);
+      }
+    },
     instanceMethods: {
       generateHash: function(password) {
         return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
